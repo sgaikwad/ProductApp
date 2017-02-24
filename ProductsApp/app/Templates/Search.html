@@ -1,0 +1,35 @@
+﻿<form name="productGallery" id="custom-search-form" class="form-search form-horizontal">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="input-group custom-search-form">
+                    <input type="text" class="form-control" ng-model="searchItem">
+                    <!--<span class="input-group-btn">
+                        <button class="btn btn-primary" type="submit" ng-click="getProducts()">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>-->
+                </div><!-- /input-group -->
+            </div>
+        </div>
+        {{message}}
+        <div class="row" ng-show="searchResult">
+            <table class="table table-hover">
+                <thead>
+
+                    
+                    <tr>
+                        <th>Material</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--<tr ng-repeat="product in searchResult.products">
+                        <td>{{product.description}}</td>
+                        <td>{{product.material}}</td>
+                    </tr>-->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</form>
