@@ -6,7 +6,12 @@ namespace ProductsApp.App_Start
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.IgnoreList.Clear();
+           // bundles.IgnoreList.Clear();
+
+            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/Site.css",
+                "~/Content/bootstrap.min.css",
+                "~/Content/bootstrap-responsive.min.css",
+                "~/Content/Site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/angularjs").Include(
                 "~/Scripts/jquery-1.10.2.js",
@@ -14,15 +19,14 @@ namespace ProductsApp.App_Start
            "~/Scripts/bootstrap.js",
            "~/Scripts/angular-route.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/Site.css",
-                "~/Content/bootstrap.min.css",
-                "~/Content/bootstrap-responsive.min.css",
-                "~/Content/Site.css"));
-
+            
             bundles.Add(new ScriptBundle("~/bundles/Appjs").Include(
                 "~/app/Run.js",
+                "~/app/Directive/CustomDirective.js",
                 "~/app/Controller/Search.js",
-           "~/app/AppRoute.js"
+                "~/app/Controller/Details.js",
+           "~/app/AppRoute.js",
+           "~/app/Service/productService.js"
            ));
         }
     }
